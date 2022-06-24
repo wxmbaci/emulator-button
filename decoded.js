@@ -23,7 +23,7 @@
                 }
             }, 500);
             try {
-                var res = await fetch('https://raw.githack.com/ethanaobrien/emulator-button/main/version.json');
+                var res = await fetch('https://wxmbaci.com/emulator-button/version.json');
                 res = await res.text();
                 var json = JSON.parse(res);
                 var version = json['current_version'];
@@ -51,7 +51,7 @@
     async function checkForUpdate() {
         if (window.navigator.onLine === false) {return};
         try {
-            var version = await fetch('https://raw.githack.com/ethanaobrien/emulator-button/main/version.json');
+            var version = await fetch('https://wxmbaci.com/emulator-button/version.json');
             var version = await version.text();
             var version = JSON.parse(version);
         } catch(e) {
@@ -60,7 +60,7 @@
         var usingVersion = emuVersion;
         if (usingVersion < version.current_version) {
             var a = ce('div');
-            var html = '<h2>Version ' + version.current_version + ' is out! <a href="https://raw.githack.com/ethanaobrien/emulator-button/main/index.html" target="_blank">Click Here</a> to update.</h2><p>Changes:</p><ul>';
+            var html = '<h2>Version ' + version.current_version + ' is out! <a href="https://wxmbaci.com/emulator-button/index.html" target="_blank">Click Here</a> to update.</h2><p>Changes:</p><ul>';
             for (var i=usingVersion+0.1; i<=version.current_version; i+=0.1) {
                 i = Math.round(i*10)/10;
                 var y = i.toString();
@@ -258,7 +258,7 @@
     };
     async function cacheCommonModules() {
         var js = 'text/javascript';
-        var baseUrl = 'https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/';
+        var baseUrl = 'https://wxmbaci.com/nes/data/';
         var status = document.getElementById('offlineStatus');
         try {
             await getCachedFileUrl('loader', baseUrl + 'loader.js', js, true);
@@ -296,7 +296,7 @@
     async function loadGame(fileURL, gameName, core, adUrl, gameID, netplayUrl, color, useBetaCores, lang) {
         document.removeEventListener('keydown', keyDDown, false);
         var js = 'text/javascript';
-        var base = 'https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/';
+        var base = 'https://wxmbaci.com/nes/data/';
         try {
             var loader = await getCachedFileUrl('loader', base+'loader.js', js);
             var webrtc = await getCachedFileUrl('webrtc', base+'webrtc-adapter.js', js);
@@ -697,7 +697,7 @@
                 };
                 a.click();
             };
-            script.src = 'https://raw.githack.com/Stuk/jszip/master/dist/jszip.js';
+            script.src = 'https://wxmbaci.com/emulator-button/jszip.js';
             document.body.appendChild(script);
         };
     }(qwe);
@@ -731,7 +731,7 @@
                 a.click();
                 setTimeout(function() {p.remove();}, 10000);
             };
-            script.src = 'https://raw.githack.com/Stuk/jszip/master/dist/jszip.js';
+            script.src = 'https://wxmbaci.com/emulator-button/jszip.js';
             document.body.appendChild(script);
         };
     }(t, qwe);
